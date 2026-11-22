@@ -1,0 +1,11 @@
+PASS AC-01: Register and log in with two accounts — Seller and buyer identities appear in their separate account pages.
+PASS AC-02: Upload and publish a product — Uploaded cover, title, and price of CNY 25.50 were saved through the real backend.
+PASS AC-03: Reload and log in again — Product title, uploaded cover, and price remain available after refresh and a new login.
+PASS AC-04: Search from the buyer account — The product search returns exactly the published test item.
+PASS AC-05: Edit and retrieve the product price — Seller updated the price from CNY 25.50 to CNY 19.80; the buyer sees the change after refresh.
+PASS AC-06: Reject editing by another account — An API-assisted edit attempt under the buyer session returned HTTP 403; the price remained CNY 19.80.
+PASS AC-07: View seller contact details — The contact dialog displays the seller test account email.
+PASS AC-08: Complete the buyer and seller transaction flow — Request progressed through pending, accepted, and completed; the product changed from available to reserved to sold.
+PASS AC-09: Publish and retrieve a forum post — Post remains after refresh and is accessible from the buyer account.
+PASS AC-10: Handle an incorrect login password — Displayed an error (用户名或密码错误) and did not create an authenticated session.
+ALL 10 ACCEPTANCE CHECKS PASSED; 14 RUNTIME SCREENSHOTS SAVED.

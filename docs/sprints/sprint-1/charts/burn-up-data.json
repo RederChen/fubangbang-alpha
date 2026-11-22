@@ -1,0 +1,85 @@
+{
+  "title": "Fubangbang Sprint 1 task burn-up",
+  "snapshot_date": "2026-11-22",
+  "snapshot_stage": "After chart preparation, before GitHub upload, contribution record, and essay publication",
+  "unit": "Completed tasks; one equal-weight unit per task",
+  "scope": "Sprint 1 only, not full-project feature completion",
+  "scope_established_date": "2026-11-22",
+  "scope_basis": "Reconstructed on November 22 from four evidenced November 21 work packages and the four November 22 tasks stated by the user. No pre-sprint frozen baseline is claimed.",
+  "observations": [
+    {
+      "date": "2026-11-21",
+      "label": "Nov 21",
+      "completed": 4,
+      "comparison_scope": 8,
+      "basis": "Four completed work packages confirmed by existing records"
+    },
+    {
+      "date": "2026-11-22",
+      "label": "Nov 22 (current)",
+      "completed": 5,
+      "comparison_scope": 8,
+      "basis": "Same four work packages plus the chart delivered with this snapshot"
+    }
+  ],
+  "total_tasks": 8,
+  "completed_tasks": 5,
+  "tasks": [
+    {
+      "id": "S1-T01",
+      "name": "Environment reproduction and source baseline",
+      "status": "Done",
+      "completed_date": "2026-11-21",
+      "evidence": "01-environment-and-baseline.md"
+    },
+    {
+      "id": "S1-T02",
+      "name": "Initial automated checks and result record",
+      "status": "Done",
+      "completed_date": "2026-11-21",
+      "evidence": "02-initial-automated-checks.md"
+    },
+    {
+      "id": "S1-T03",
+      "name": "Two-account browser acceptance and screenshots",
+      "status": "Done",
+      "completed_date": "2026-11-21",
+      "evidence": "03-browser-acceptance.md"
+    },
+    {
+      "id": "S1-T04",
+      "name": "Issue investigation and next-sprint plan",
+      "status": "Done",
+      "completed_date": "2026-11-21",
+      "evidence": "04-issue-review.md; TITLE-BOUNDARY-CHECKS.md; SPRINT2-TASK-PLAN.md"
+    },
+    {
+      "id": "S1-T05",
+      "name": "Prepare and verify the burn-up chart",
+      "status": "Done",
+      "completed_date": "2026-11-22",
+      "evidence": "This delivered chart, task register, and verified image"
+    },
+    {
+      "id": "S1-T06",
+      "name": "Upload source and sprint evidence to GitHub",
+      "status": "Pending",
+      "completed_date": null,
+      "evidence": "Await actual repository upload and commit link"
+    },
+    {
+      "id": "S1-T07",
+      "name": "Complete the contribution record",
+      "status": "Pending",
+      "completed_date": null,
+      "evidence": "Await actual member work details and completed record"
+    },
+    {
+      "id": "S1-T08",
+      "name": "Finalize and publish the Sprint 1 essay",
+      "status": "Pending",
+      "completed_date": null,
+      "evidence": "Existing draft is not a published essay; await publication link"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-21",
+  "type": "Maintainability review; no functional failure alleged",
+  "source": "src/views/Publish.vue",
+  "total_lines": 1130,
+  "sha256": "0477a1cb7d3cba4919c34487dde0a947fb32c8a3b5b166efcd107ac144abe955",
+  "responsibility_locations": {
+    "script_start": 298,
+    "style_start": 420,
+    "image_upload": 332,
+    "draft_storage": 351,
+    "existing_product_loading": 360,
+    "validation_and_submission": 378
+  },
+  "finding": "Image upload, draft storage, edit loading, validation, and submission share one view script. A substantial portion of the file is styles.",
+  "recommendation": "Extract one responsibility in a later sprint and verify existing behavior."
+}

@@ -1,0 +1,25 @@
+
+> fubangbang-frontend@1.0.0 test:e2e
+> node scripts/run_e2e.js
+
+
+  VITE v6.4.4  ready in 415 ms
+
+  ➜  Local:   http://127.0.0.1:54108/
+PASS registration, real login and protected-route return
+PASS cover upload, draft restore and durable product creation
+PASS owner product editing
+PASS server-side search and empty result state
+PASS wrong-password and network-error login cannot create sessions
+PASS durable favorites, seller contact and buyer/seller transaction completion
+PASS failed publish stays editable, retry saves once, confirmed deletion persists
+PASS forum auth, missing-post 404, cover upload, draft, failed-write retry and durable plain-text post
+PASS forum owner editing, cross-user edit rejection, category/search filters, own posts and real homepage entry
+PASS forum cross-account comments, failed-write retention, durable edit and confirmed deletion
+PASS forum delete confirmation/cascade, offline retry and 375/390/440px layouts
+PASS product likes persist, can be cancelled, do not spam, and show cross-account unread badge
+PASS post likes/comment notices, read-and-open, read-all persistence, unread filter, offline retry
+PASS notification transaction deep link, 375/390/440px message and like layouts
+PASS expired session, missing product, offline error and retry without Mock fallback
+PASS 375/390/440px layouts and zero uncaught browser errors
+ALL END-TO-END CHECKS PASSED

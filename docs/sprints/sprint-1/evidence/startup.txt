@@ -1,0 +1,12 @@
+Created private local backend settings; existing settings are never overwritten.
+INFO:     127.0.0.1:56020 - "GET /api/health HTTP/1.1" 200 OK
+
+  VITE v6.4.4  ready in 521 ms
+
+  ➜  Local:   http://127.0.0.1:5173/
+  ➜  press h + enter to show help
+
+CampusLink: http://127.0.0.1:5173/
+API docs: http://127.0.0.1:8000/docs
+Press Ctrl+C to stop both services.
+INFO:     127.0.0.1:54079 - "GET /api/health HTTP/1.1" 200 OK

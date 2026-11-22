@@ -1,0 +1,209 @@
+{
+  "date": "2026-11-21",
+  "method": "Real browser UI acceptance executed with browser automation",
+  "database": "Separate SQLite database",
+  "viewport": {
+    "width": 440,
+    "height": 956,
+    "deviceScaleFactor": 2
+  },
+  "checks": [
+    {
+      "id": "AC-01",
+      "name": "Register and log in with two accounts",
+      "status": "PASS",
+      "actual": "Seller and buyer identities appear in their separate account pages.",
+      "screenshots": [
+        "01-seller-login.png",
+        "02-buyer-login.png"
+      ]
+    },
+    {
+      "id": "AC-02",
+      "name": "Upload and publish a product",
+      "status": "PASS",
+      "actual": "Uploaded cover, title, and price of CNY 25.50 were saved through the real backend.",
+      "screenshots": [
+        "03-product-form.png"
+      ]
+    },
+    {
+      "id": "AC-03",
+      "name": "Reload and log in again",
+      "status": "PASS",
+      "actual": "Product title, uploaded cover, and price remain available after refresh and a new login.",
+      "screenshots": [
+        "04-product-after-relogin.png"
+      ]
+    },
+    {
+      "id": "AC-04",
+      "name": "Search from the buyer account",
+      "status": "PASS",
+      "actual": "The product search returns exactly the published test item.",
+      "screenshots": [
+        "05-buyer-search.png"
+      ]
+    },
+    {
+      "id": "AC-05",
+      "name": "Edit and retrieve the product price",
+      "status": "PASS",
+      "actual": "Seller updated the price from CNY 25.50 to CNY 19.80; the buyer sees the change after refresh.",
+      "screenshots": [
+        "06-buyer-updated-price.png"
+      ]
+    },
+    {
+      "id": "AC-06",
+      "name": "Reject editing by another account",
+      "status": "PASS",
+      "actual": "An API-assisted edit attempt under the buyer session returned HTTP 403; the price remained CNY 19.80.",
+      "screenshots": []
+    },
+    {
+      "id": "AC-07",
+      "name": "View seller contact details",
+      "status": "PASS",
+      "actual": "The contact dialog displays the seller test account email.",
+      "screenshots": [
+        "07-seller-contact.png"
+      ]
+    },
+    {
+      "id": "AC-08",
+      "name": "Complete the buyer and seller transaction flow",
+      "status": "PASS",
+      "actual": "Request progressed through pending, accepted, and completed; the product changed from available to reserved to sold.",
+      "screenshots": [
+        "08-buyer-request-pending.png",
+        "09-seller-accepted.png",
+        "10-seller-completed.png",
+        "11-buyer-completed.png",
+        "12-product-sold.png"
+      ]
+    },
+    {
+      "id": "AC-09",
+      "name": "Publish and retrieve a forum post",
+      "status": "PASS",
+      "actual": "Post remains after refresh and is accessible from the buyer account.",
+      "screenshots": [
+        "13-forum-after-refresh.png"
+      ]
+    },
+    {
+      "id": "AC-10",
+      "name": "Handle an incorrect login password",
+      "status": "PASS",
+      "actual": "Displayed an error (用户名或密码错误) and did not create an authenticated session.",
+      "screenshots": [
+        "14-invalid-login.png"
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "file": "screenshots/01-seller-login.png",
+      "caption": "Seller account after registration and login.",
+      "route": "/profile",
+      "viewport": "440 × 956 CSS pixels",
+      "pixels": "880 × 1912 pixels"
+    },
+    {
+      "file": "screenshots/02-buyer-login.png",
+      "caption": "Buyer account in a separate browser session.",
+      "route": "/profile",
+      "viewport": "440 × 956 CSS pixels",
+      "pixels": "880 × 1912 pixels"
+    },
+    {
+      "file": "screenshots/03-product-form.png",
+      "caption": "Real uploaded cover and completed product form before submission.",
+      "route": "/publish",
+      "viewport": "440 × 956 CSS pixels",
+      "pixels": "880 × 1912 pixels"
+    },
+    {
+      "file": "screenshots/04-product-after-relogin.png",
+      "caption": "Published product after a page refresh and a real logout and login.",
+      "route": "/product/1",
+      "viewport": "440 × 956 CSS pixels",
+      "pixels": "880 × 1912 pixels"
+    },
+    {
+      "file": "screenshots/05-buyer-search.png",
+      "caption": "Buyer finds the seller product through the marketplace search.",
+      "route": "/idle",
+      "viewport": "440 × 956 CSS pixels",
+      "pixels": "880 × 1912 pixels"
+    },
+    {
+      "file": "screenshots/06-buyer-updated-price.png",
+      "caption": "Buyer sees the seller updated price of CNY 19.80.",
+      "route": "/product/1",
+      "viewport": "440 × 956 CSS pixels",
+      "pixels": "880 × 1912 pixels"
+    },
+    {
+      "file": "screenshots/07-seller-contact.png",
+      "caption": "Buyer opens the seller contact dialog with test contact details.",
+      "route": "/product/1",
+      "viewport": "440 × 956 CSS pixels",
+      "pixels": "880 × 1912 pixels"
+    },
+    {
+      "file": "screenshots/08-buyer-request-pending.png",
+      "caption": "Buyer transaction request is pending seller action.",
+      "route": "/transactions",
+      "viewport": "440 × 956 CSS pixels",
+      "pixels": "880 × 1912 pixels"
+    },
+    {
+      "file": "screenshots/09-seller-accepted.png",
+      "caption": "Seller accepted the request and the product is reserved.",
+      "route": "/transactions",
+      "viewport": "440 × 956 CSS pixels",
+      "pixels": "880 × 1912 pixels"
+    },
+    {
+      "file": "screenshots/10-seller-completed.png",
+      "caption": "Seller transaction record after confirming completion in the test scenario.",
+      "route": "/transactions",
+      "viewport": "440 × 956 CSS pixels",
+      "pixels": "880 × 1912 pixels"
+    },
+    {
+      "file": "screenshots/11-buyer-completed.png",
+      "caption": "Buyer sees the completed transaction after refresh.",
+      "route": "/transactions",
+      "viewport": "440 × 956 CSS pixels",
+      "pixels": "880 × 1912 pixels"
+    },
+    {
+      "file": "screenshots/12-product-sold.png",
+      "caption": "Product status is sold and a new booking is disabled.",
+      "route": "/product/1",
+      "viewport": "440 × 956 CSS pixels",
+      "pixels": "880 × 1912 pixels"
+    },
+    {
+      "file": "screenshots/13-forum-after-refresh.png",
+      "caption": "Forum post and content remain available after refreshing the page.",
+      "route": "/forum/1",
+      "viewport": "440 × 956 CSS pixels",
+      "pixels": "880 × 1912 pixels"
+    },
+    {
+      "file": "screenshots/14-invalid-login.png",
+      "caption": "Incorrect password produces an error and no authenticated session.",
+      "route": "/login",
+      "viewport": "440 × 956 CSS pixels",
+      "pixels": "880 × 1912 pixels"
+    }
+  ],
+  "pageErrors": [],
+  "status": "PASS",
+  "productId": 1,
+  "postId": 1
+}

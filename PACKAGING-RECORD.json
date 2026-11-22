@@ -1,0 +1,37 @@
+{
+  "prepared_date": "2026-11-21",
+  "input_folder_label": "冲刺1",
+  "status": "Organization complete; submission draft has outstanding items",
+  "canonical_input": "sprint1-steps1-4-github-records.zip",
+  "canonical_record_files": 37,
+  "duplicate_file_comparisons": 54,
+  "duplicate_content_conflicts": 0,
+  "original_source_files_copied": 263,
+  "original_source_files_changed": 0,
+  "original_runtime_pngs": 16,
+  "runtime_pngs_modified": 0,
+  "execution_evidence_relocated": {
+    "acceptance-results.json": "evidence/step3-acceptance-results.json",
+    "acceptance-execution.txt": "evidence/step3-acceptance-execution.txt"
+  },
+  "new_authored_materials": [
+    "README.md",
+    "source/README.md",
+    "submission/SPRINT1-ESSAY-DRAFT.md",
+    "submission/SUBMISSION-CHECKLIST.md"
+  ],
+  "contribution_record": "Not generated, as requested",
+  "remaining_submission_items": [
+    "Final burn-up snapshot after actual remaining task completion",
+    "Actual November 22 closing review",
+    "Deferred member work information",
+    "Repository and publication links"
+  ],
+  "preservation": "Original input folder and its files were not moved, deleted, or overwritten.",
+  "updates": [
+    {
+      "date": "2026-11-22",
+      "change": "Added current Sprint 1 task burn-up (5/8), dataset, scope notes, and draft references. No repository upload, member contribution record, or publication performed."
+    }
+  ]
+}

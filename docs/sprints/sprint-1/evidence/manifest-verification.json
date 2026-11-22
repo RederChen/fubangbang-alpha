@@ -1,0 +1,7 @@
+{
+  "record_date": "2026-11-21",
+  "source": "<project-root>",
+  "original_files_checked": 263,
+  "changed_or_missing_original_files": [],
+  "scope": "Only compares files recorded before dependency installation; generated files are outside this comparison."
+}
