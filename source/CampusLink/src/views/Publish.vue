@@ -136,13 +136,14 @@
         <div class="field-item">
           <div class="field-label-row">
             <span class="field-label">商品名称</span>
-            <span class="char-count">{{ title.length }}/30</span>
+            <span class="char-count" title="去除首尾空白后计数；部分表情占 2 个字符">{{ normalizedTitle.length }}/30</span>
           </div>
           <div class="input-wrapper" :class="{ 'has-focus': focusedField === 'title' }">
             <input
-              v-model.trim="title"
+              v-model="title"
               type="text"
               maxlength="30"
+              aria-label="商品名称"
               class="text-input"
               placeholder="例如：高等数学（第七版）上册 九成新"
               @focus="focusedField = 'title'"
@@ -150,7 +151,7 @@
               @input="errors.title = ''"
             />
           </div>
-          <p v-if="errors.title" class="error-text">{{ errors.title }}</p>
+          <p v-if="errors.title || titleLengthError" class="error-text" role="alert">{{ errors.title || titleLengthError }}</p>
         </div>
 
         <!-- 商品描述 -->
@@ -308,6 +309,9 @@ const session = useUserStore();
 const isEdit = computed(() => Boolean(route.params.id));
 const fileInputRef = ref<HTMLInputElement | null>(null);
 const title = ref('');
+const normalizedTitle = computed(() => title.value.trim());
+const titleLengthError = computed(() => normalizedTitle.value.length > 30
+  ? '商品名称最多 30 个字符，部分表情占 2 个字符' : '');
 const description = ref('');
 const price = ref('');
 const selectedCategory = ref('');
@@ -365,6 +369,7 @@ async function loadExisting() {
     const item = await getProductDetail(Number(route.params.id));
     if (item.seller.id !== session.user?.id) throw new Error('只能编辑自己发布的商品');
     title.value = item.title;
+    errors.title = normalizedTitle.value ? titleLengthError.value : '请填写商品名称';
     description.value = item.description || '';
     price.value = String(item.price);
     selectedCategory.value = item.category;
@@ -378,7 +383,7 @@ async function loadExisting() {
 async function handleSubmit() {
   if (isSubmitting.value || uploading.value || publishedSuccess.value) return;
   errors.photos = photoList.value.length ? '' : '请先上传 1 张封面图';
-  errors.title = title.value.trim() && title.value.trim().length <= 30 ? '' : '商品名称应为 1–30 字';
+  errors.title = normalizedTitle.value ? titleLengthError.value : '请填写商品名称';
   errors.price = /^\d{1,8}(\.\d{1,2})?$/.test(price.value) && Number(price.value) > 0 ? '' : '请输入大于 0、最多两位小数的价格';
   errors.category = productCategories.includes(selectedCategory.value) ? '' : '请选择商品分类';
   if (Object.values(errors).some(Boolean)) { showToastMsg('请完善商品信息后再保存'); return; }
@@ -387,7 +392,7 @@ async function handleSubmit() {
   try {
     const cleanDescription = description.value.replace(/\n?是否议价：[接受不]+议价/g, '').trim();
     const payload = {
-      title: title.value.trim(), description: `${cleanDescription}\n是否议价：${acceptBargain.value ? '接受议价' : '不接受议价'}`.trim(),
+      title: normalizedTitle.value, description: `${cleanDescription}\n是否议价：${acceptBargain.value ? '接受议价' : '不接受议价'}`.trim(),
       price: Number(price.value), category: selectedCategory.value, image_url: photoList.value[0].url,
       location: `福州大学${selectedCampus.value} ${locationDetail.value.trim() || '生活区'}`
     };
