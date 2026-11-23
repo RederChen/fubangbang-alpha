@@ -83,6 +83,8 @@ Authorization: Bearer <token>
 
 需要登录。
 
+标题必须是字符串，按 JavaScript `trim()` 规则去除首尾空白后，长度为 1–30 个 UTF-16 单位（部分表情占 2 个单位）。保存规范化后的标题；空白、超长、`null` 和非字符串返回 HTTP 422，错误字段为 `title`。
+
 ```json
 {
   "title": "数学教材",
@@ -97,6 +99,8 @@ Authorization: Bearer <token>
 ### PUT /products/{id}
 
 修改自己的商品，需要登录。请求字段均可选。
+
+提供 `title` 时执行与创建相同的校验；省略该字段则原样保留已存标题，包括历史超长值。明确传入 `null` 不等于省略。标题校验失败时整次请求被拒绝，价格等其他字段也不会修改。不会自动截断或批量迁移历史标题。
 
 ### PATCH /products/{id}/status
 

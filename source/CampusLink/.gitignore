@@ -62,8 +62,8 @@ coverage/
 __pycache__/
 *.py[cod]
 
-# Independently maintained backend repository downloaded for integration
-/backend/
+# Alpha coursework tracks backend source in this repository.
+# backend/.gitignore still excludes private settings, databases and environments.
 
 # Generated professional-prototype reference images
 /prototype/references/

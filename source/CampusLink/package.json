@@ -20,6 +20,7 @@
     "test:postgres": "node scripts/postgres_cli.js validate",
     "setup:backend": "node scripts/setup_backend.js",
     "test:e2e": "node scripts/run_e2e.js",
+    "test:titles": "node scripts/test_product_titles_e2e.js",
     "build": "vite build",
     "preview": "vite preview",
     "typecheck": "vue-tsc --noEmit -p tsconfig.json",
