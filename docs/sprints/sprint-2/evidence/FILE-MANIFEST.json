@@ -1,0 +1,105 @@
+{
+  "scope": "Sprint 2 final records except this manifest",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 47,
+      "sha256": "c554cac7c2be55f33462e75919b0b4e89e3fd3801aad803fc7751016d044087f"
+    },
+    {
+      "path": "01-implementation.md",
+      "bytes": 2367,
+      "sha256": "2a2a1eaeceaa38781678df336996d53119561ca9e5be242ee5ea7315a2e7a8ec"
+    },
+    {
+      "path": "02-automated-checks.md",
+      "bytes": 1934,
+      "sha256": "fee6cf0002610ef4e978f65e748648fa1eb026d9359ad57059ecdc82ed4b0ec4"
+    },
+    {
+      "path": "03-browser-acceptance.md",
+      "bytes": 2485,
+      "sha256": "8144157d86a45b845a37d977b7bdaba9a6d26bd8cfc459effbc42b6ae41d1c09"
+    },
+    {
+      "path": "04-issue-review.md",
+      "bytes": 1615,
+      "sha256": "fc20bfb423815d42abd454b2d3fee24460bfc636e8c353dbccd3d0512867b0f5"
+    },
+    {
+      "path": "evidence/.gitattributes",
+      "bytes": 8,
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+    },
+    {
+      "path": "evidence/backend-tests.txt",
+      "bytes": 1146,
+      "sha256": "0da4d95cca52318e513e3760a6096b5dea53d0d717915fbd552f67f23937e225"
+    },
+    {
+      "path": "evidence/backend-tests.xml",
+      "bytes": 25272,
+      "sha256": "0775c652d50661d102fd79643f8f9d625da146fc72e95fbd4d440dad4794f91e"
+    },
+    {
+      "path": "evidence/existing-browser-suite.txt",
+      "bytes": 1396,
+      "sha256": "71e70524cecfc7da3d73cdbd77590d990828c633d851b399260a5b4d038120a0"
+    },
+    {
+      "path": "evidence/frontend-build.txt",
+      "bytes": 3462,
+      "sha256": "2fd1539cc5a1cc6d1e1b489b703cef0676a05aaeeb5c8b58df7b958ff9c233f7"
+    },
+    {
+      "path": "evidence/frontend-typecheck.txt",
+      "bytes": 74,
+      "sha256": "e6de649280de2d149b5221b1269c507a3534281ce7e60c93ee9167ba24983e8c"
+    },
+    {
+      "path": "evidence/title-browser-execution.txt",
+      "bytes": 1347,
+      "sha256": "5be093243c4ae1063ef0ec03ba444763d6dae652911aab7ef70191d776958549"
+    },
+    {
+      "path": "evidence/title-browser-results.json",
+      "bytes": 5507,
+      "sha256": "42e22a397576fdae7802869b22174e2b742bf67edfb5a7e1bdc2634cbdd5ae26"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2386,
+      "sha256": "5c7adbce138f441b76a07489ea12ff5b0d9436419b4abd5594c367b1e1e5e517"
+    },
+    {
+      "path": "screenshots/01-title-limit-30.png",
+      "bytes": 262418,
+      "sha256": "4be1c51d6d75f1f4cd0e865b35865d217b2813b7e6fc356f5bd934cd358056c3"
+    },
+    {
+      "path": "screenshots/02-blank-title-rejected.png",
+      "bytes": 266901,
+      "sha256": "c659859cd9e8a1c0cef57976721af027d08cbac5fa798bc95bdc3cbf31a41886"
+    },
+    {
+      "path": "screenshots/03-normalized-published-title.png",
+      "bytes": 533406,
+      "sha256": "e0ac37673cb9aac9fb22b3ee918f278540b49b7d76db271d0715427c094ed5e6"
+    },
+    {
+      "path": "screenshots/04-edited-title-after-new-login.png",
+      "bytes": 530685,
+      "sha256": "aaf8918fd25a35765bfee615ac4e77adc44ddb5b5d5bdf74bb3061275bb2ad4a"
+    },
+    {
+      "path": "screenshots/05-legacy-title-requires-correction.png",
+      "bytes": 269305,
+      "sha256": "68d376a105f7a9faf12d5c955f1bce94217c99609db5b83925615819bca80963"
+    },
+    {
+      "path": "SCREENSHOTS.md",
+      "bytes": 1266,
+      "sha256": "e87474ab426c3c5e959ed8139fad4db0785dfb3f2ea085d7a1116e1503279a8b"
+    }
+  ]
+}
