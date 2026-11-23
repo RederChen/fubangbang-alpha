@@ -1,0 +1,203 @@
+{
+  "startedAt": "2026-11-23T08:20:34.855Z",
+  "method": "Automated real-browser and live-API verification",
+  "database": "Fresh isolated SQLite database; no PostgreSQL verification",
+  "sourceCommit": "127a9e73089978394b271ce8b76fe180ce2f0582",
+  "sourceFiles": {
+    "backend/src/schemas/product.py": "c7ac2cf7ce526d65bc7a80d208f939f9a18a9a5806d69e08170031b9d4de013d",
+    "src/views/Publish.vue": "733f490095082727ab6925b601a7f62d2d47bab5aad8d8b6c592f3874802ebd6",
+    "scripts/test_product_titles_e2e.js": "d454383eeeb1dc9a1a3847bd93d4a30725d8b6ab932a385b4b969eb227525e9d"
+  },
+  "checks": [
+    {
+      "id": "API-ascii30",
+      "description": "Creation and editing accept and normalize the same valid boundary",
+      "actual": {
+        "http": [
+          201,
+          200
+        ],
+        "normalizedUnits": 30
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "API-padded30",
+      "description": "Creation and editing accept and normalize the same valid boundary",
+      "actual": {
+        "http": [
+          201,
+          200
+        ],
+        "normalizedUnits": 30
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "API-emoji15",
+      "description": "Creation and editing accept and normalize the same valid boundary",
+      "actual": {
+        "http": [
+          201,
+          200
+        ],
+        "normalizedUnits": 30
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "API-ascii31",
+      "description": "Invalid creation and update are rejected without changing stored fields",
+      "actual": {
+        "http": [
+          422,
+          422
+        ],
+        "titleUnchanged": true,
+        "priceUnchanged": true
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "API-blank",
+      "description": "Invalid creation and update are rejected without changing stored fields",
+      "actual": {
+        "http": [
+          422,
+          422
+        ],
+        "titleUnchanged": true,
+        "priceUnchanged": true
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "API-emoji16",
+      "description": "Invalid creation and update are rejected without changing stored fields",
+      "actual": {
+        "http": [
+          422,
+          422
+        ],
+        "titleUnchanged": true,
+        "priceUnchanged": true
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "API-null",
+      "description": "Invalid creation and update are rejected without changing stored fields",
+      "actual": {
+        "http": [
+          422,
+          422
+        ],
+        "titleUnchanged": true,
+        "priceUnchanged": true
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "API-omitted-title",
+      "description": "Price-only update preserves the stored title",
+      "actual": {
+        "http": 200,
+        "title": "Original title"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "UI-ascii-limit",
+      "description": "Browser input and counter use the 30-unit limit",
+      "actual": {
+        "typedUnits": 31,
+        "retainedUnits": 30
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "UI-emoji-counter",
+      "description": "Fifteen supplementary emoji count as 30 units",
+      "actual": {
+        "counter": "30/30"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "UI-blank",
+      "description": "Blank title is blocked before submission",
+      "actual": {
+        "productRequests": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "UI-publish-refresh",
+      "description": "Valid title is normalized, saved and survives refresh",
+      "actual": {
+        "title": "Sprint 2 normalized title",
+        "http": 201
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "UI-login-edit-refresh",
+      "description": "New login and edit preserve normalized data after refresh",
+      "actual": {
+        "title": "Edited title",
+        "price": 19.8,
+        "http": 200
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "UI-legacy-title",
+      "description": "Legacy title remains readable and is never silently truncated",
+      "actual": {
+        "loadedUnits": 40,
+        "counter": "40/30",
+        "productUpdates": 0,
+        "priceOnlyUpdate": 200
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "UI-legacy-correction",
+      "description": "A corrected legacy title saves successfully",
+      "actual": {
+        "http": 200
+      },
+      "status": "PASS"
+    }
+  ],
+  "screenshots": [
+    {
+      "file": "screenshots/01-title-limit-30.png",
+      "caption": "The browser retains 30 of 31 typed ASCII characters and displays 30/30.",
+      "route": "/publish"
+    },
+    {
+      "file": "screenshots/02-blank-title-rejected.png",
+      "caption": "A blank title produces a field error without sending a product request.",
+      "route": "/publish"
+    },
+    {
+      "file": "screenshots/03-normalized-published-title.png",
+      "caption": "Published title is trimmed and remains visible after refresh.",
+      "route": "/product/5"
+    },
+    {
+      "file": "screenshots/04-edited-title-after-new-login.png",
+      "caption": "After a new login, editing stores the normalized title and new price.",
+      "route": "/product/5"
+    },
+    {
+      "file": "screenshots/05-legacy-title-requires-correction.png",
+      "caption": "An existing 40-unit title is preserved and flagged for correction; submission is blocked.",
+      "route": "/product/6/edit"
+    }
+  ],
+  "pageErrors": [],
+  "status": "PASS",
+  "finishedAt": "2026-11-23T08:20:50.079Z"
+}

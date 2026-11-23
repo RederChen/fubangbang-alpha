@@ -1,5 +1,7 @@
 # 福帮帮 (CampusLink) · 校园互助与闲置交易平台 · 前端
 
+> Alpha coursework repository: both frontend and backend are tracked here under `source/CampusLink/`. Use the current [source setup guide](../README.md) and [Sprint 2 handoff](../../docs/sprints/sprint-2/TEAM-HANDOFF.md). The separate-repository instructions and compiled releases below describe the original handoff history.
+
 > 2026-10-30 新版交接入口：[交接说明](docs/HANDOFF_20261030.md)、[项目进展报告](docs/PROJECT_PROGRESS_REPORT.md)、[验收与演示](docs/ACCEPTANCE_20261030.md)。Word 报告随外层交接 ZIP 提供。专业工具原型继续待办。
 
 > 福州大学 EE308FZ 软件工程课程项目 · UI & 汇报组 / 前端组

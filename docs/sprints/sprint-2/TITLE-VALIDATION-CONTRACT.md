@@ -1,9 +1,13 @@
 # Sprint 2 Product Title Validation Contract
 
-**Decision:** Adopt the rules below for the Sprint 2 implementation.  
-**Planned implementation window:** November 23–24, 2026  
-**Engineering task:** A05 / S2-01  
-**Implementation status:** Not started  
+**Decision:** Adopt the rules below for the Sprint 2 implementation.
+
+**Planned implementation window:** November 23–24, 2026
+
+**Engineering task:** A05 / S2-01
+
+**Implementation status:** Implemented and verified on `fix/sprint2-product-title`; review and merge pending. See [verification evidence](VERIFICATION-INDEX.md).
+
 **Related findings:** S1-01 and S1-02
 
 Product creation and editing will use the same title normalization and validation rule. Keep the existing browser limit of 30 UTF-16 code units, normalize before checking length, and preserve the stored title when an update omits the field.
@@ -61,7 +65,7 @@ These are acceptance targets for implementation and regression testing, not test
 
 ## Completion and Scope
 
-A05 / S2-01 is complete when this contract and both issue records are available for the implementation work. A06 and A07 remain open work: implement the rule, add regression assertions, and verify the affected browser flow. Keep both defects open until their acceptance criteria pass and the implementation and verification evidence is linked.
+A05 / S2-01 is complete when this contract and both issue records are available for the implementation work. At the decision stage, A06 and A07 were the next work. Their implementation and regression evidence are now recorded in [the verification index](VERIFICATION-INDEX.md); integration review remains pending. Keep both defects open until their acceptance criteria pass and the implementation and verification evidence is linked.
 
 Publishing-page extraction stays in Sprint 3. No database migration, full page rewrite, unrelated validation change, or application code modification is part of this decision step.
 

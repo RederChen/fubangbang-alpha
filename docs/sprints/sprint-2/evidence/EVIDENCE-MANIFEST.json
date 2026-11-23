@@ -1,0 +1,75 @@
+{
+  "scope": "Files under evidence except this manifest",
+  "files": [
+    {
+      "path": "backend-tests.txt",
+      "bytes": 1217,
+      "sha256": "4c8be7cd609a853f575278bc9135e728caee6762f04afb1ca93bca097201ed1c"
+    },
+    {
+      "path": "backend-tests.xml",
+      "bytes": 25298,
+      "sha256": "ee67e9f88ebdc99c297b90d5aba9b63818e1ca70575519ffd0e22af618686315"
+    },
+    {
+      "path": "environment.json",
+      "bytes": 562,
+      "sha256": "4db8d054a5098003932024d671ee59aa7d2c7eb2d4052c321e7d9654b9d4a14f"
+    },
+    {
+      "path": "existing-browser-suite.txt",
+      "bytes": 1422,
+      "sha256": "ac77efd082c80220dd063566bd96a8e06278bdd591f31e07af845b7aeaf0851b"
+    },
+    {
+      "path": "frontend-build.txt",
+      "bytes": 3516,
+      "sha256": "6c11ff59a8b7b220ba9a88f4c6beb700d30690dfa1e8718ca3d9aaa8fc73d991"
+    },
+    {
+      "path": "frontend-typecheck.txt",
+      "bytes": 80,
+      "sha256": "53a5987d7154a605791dabcad965b0bbe1ed6607c1c49280f172da18c48294b0"
+    },
+    {
+      "path": "python-packages.txt",
+      "bytes": 816,
+      "sha256": "6b6584e950daebfe2f9412487ab94079a26c544a70da4efb677ae382a2138eb3"
+    },
+    {
+      "path": "screenshots/01-title-limit-30.png",
+      "bytes": 262418,
+      "sha256": "4be1c51d6d75f1f4cd0e865b35865d217b2813b7e6fc356f5bd934cd358056c3"
+    },
+    {
+      "path": "screenshots/02-blank-title-rejected.png",
+      "bytes": 266901,
+      "sha256": "c659859cd9e8a1c0cef57976721af027d08cbac5fa798bc95bdc3cbf31a41886"
+    },
+    {
+      "path": "screenshots/03-normalized-published-title.png",
+      "bytes": 533406,
+      "sha256": "e0ac37673cb9aac9fb22b3ee918f278540b49b7d76db271d0715427c094ed5e6"
+    },
+    {
+      "path": "screenshots/04-edited-title-after-new-login.png",
+      "bytes": 530685,
+      "sha256": "aaf8918fd25a35765bfee615ac4e77adc44ddb5b5d5bdf74bb3061275bb2ad4a"
+    },
+    {
+      "path": "screenshots/05-legacy-title-requires-correction.png",
+      "bytes": 269305,
+      "sha256": "68d376a105f7a9faf12d5c955f1bce94217c99609db5b83925615819bca80963"
+    },
+    {
+      "path": "title-browser-execution.txt",
+      "bytes": 1371,
+      "sha256": "6b1c5cc822b695299db86ed9225e1338091570c5d3bc45c77ebf99c70736910c"
+    },
+    {
+      "path": "title-browser-results.json",
+      "bytes": 5507,
+      "sha256": "42e22a397576fdae7802869b22174e2b742bf67edfb5a7e1bdc2634cbdd5ae26"
+    }
+  ]
+}
