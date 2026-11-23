@@ -1,6 +1,11 @@
 {
-  "scope": "Files under evidence except this manifest",
+  "scope": "Files under evidence except this manifest; captured bytes preserved by .gitattributes",
   "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 86,
+      "sha256": "03143e8d3e22d58b2ab40b04fe2acb1b0717268e1a21126831068d094b77e55c"
+    },
     {
       "path": "backend-tests.txt",
       "bytes": 1217,

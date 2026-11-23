@@ -1,0 +1,2 @@
+# Preserve captured evidence bytes so manifest hashes survive clone/checkout.
+* -text
