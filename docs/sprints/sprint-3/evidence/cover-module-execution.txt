@@ -1,0 +1,11 @@
+PASS M01: Initialization preserves product URLs/legacy empty strings and explicitly clears with null
+PASS M02: Cancelled selection leaves cover, error and idle state unchanged
+PASS M03: Unsupported MIME is rejected without upload or replacement and input is reset
+PASS M04: One byte above the 5 MiB boundary is rejected before calling upload
+PASS M05: Exactly 5 MiB passes client screening (upload response stubbed, not backend image acceptance)
+PASS M06: JPEG, PNG and WebP replace a single cover and share only the photo-error field
+PASS M07: Upload failure retains old cover and allows successful retry of the same file
+PASS M08: In-flight upload blocks picker, removal and a second file-change request
+PASS M09: Submitting state blocks cover upload, picker and removal
+PASS M10: Idle picker/removal work and a missing DOM input is handled safely
+10 module checks passed.

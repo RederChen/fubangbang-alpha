@@ -1,0 +1,19 @@
+{
+  "purpose": "Connect the original tested Windows files to Git-normalized source files.",
+  "normalization": "CRLF to LF only; no source tokens, test outcomes or execution timestamps changed.",
+  "original_record": "acceptance-summary.json#sourceFiles",
+  "files": [
+    {
+      "path": "source/CampusLink/src/views/Publish.vue",
+      "tested_original_sha256": "9df03a1658cfe6943f9bf068b080fb5ac4a9360e9e420b883870e48e90b04a87",
+      "git_source_sha256": "9aad7e56912e9af3a0ea23b982bce71bcb4409dd423a0020c9f01d6e3b122cc8",
+      "line_endings_normalized": true
+    },
+    {
+      "path": "source/CampusLink/src/composables/useProductCover.ts",
+      "tested_original_sha256": "b5ac2aea9865ff7301a7a656865435d94f72ec1ddf4324fad8eaf93953f33c2b",
+      "git_source_sha256": "b5ac2aea9865ff7301a7a656865435d94f72ec1ddf4324fad8eaf93953f33c2b",
+      "line_endings_normalized": false
+    }
+  ]
+}

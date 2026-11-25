@@ -1,0 +1,52 @@
+> fubangbang-frontend@1.0.0 build
+> vite build
+
+vite v6.4.4 building for production...
+transforming...
+✓ 127 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                  0.86 kB │ gzip:  0.51 kB
+dist/assets/PostEditor-kbdTdH2Y.css              0.07 kB │ gzip:  0.09 kB
+dist/assets/Transactions-xg1YkHWo.css            0.18 kB │ gzip:  0.14 kB
+dist/assets/RequestState-VauDjL7Z.css            0.41 kB │ gzip:  0.23 kB
+dist/assets/AppDialog-Cc3piVko.css               0.61 kB │ gzip:  0.33 kB
+dist/assets/Notifications-vEfW2Bmf.css           0.73 kB │ gzip:  0.33 kB
+dist/assets/LikeButton-C1hoGJsm.css              0.76 kB │ gzip:  0.35 kB
+dist/assets/ForumPostCard-hxxq1oO5.css           2.34 kB │ gzip:  0.87 kB
+dist/assets/ProductCard-DQt-8R_R.css             2.37 kB │ gzip:  0.91 kB
+dist/assets/Profile-4OaJl3Uo.css                 3.32 kB │ gzip:  1.04 kB
+dist/assets/IdleMarket-DhIsDA5s.css              3.58 kB │ gzip:  1.17 kB
+dist/assets/forum-BrZ6cmV9.css                   3.64 kB │ gzip:  0.86 kB
+dist/assets/ProductDetail-C4n2-0E3.css           5.90 kB │ gzip:  1.57 kB
+dist/assets/Login-Spg_BtfZ.css                   6.02 kB │ gzip:  1.67 kB
+dist/assets/Register-BbzVtGoj.css                6.38 kB │ gzip:  1.72 kB
+dist/assets/index-BDCLbSPW.css                   9.76 kB │ gzip:  2.88 kB
+dist/assets/Publish-BiRECcIo.css                10.40 kB │ gzip:  2.35 kB
+dist/assets/Home-DJQJXUC9.css                   10.66 kB │ gzip:  2.60 kB
+dist/assets/logo_fubangbang_clean-BNBqK5WB.js    0.11 kB │ gzip:  0.10 kB
+dist/assets/RequestState-CLXDJQvb.js             0.57 kB │ gzip:  0.45 kB
+dist/assets/trade-D6yTEeqY.js                    0.77 kB │ gzip:  0.41 kB
+dist/assets/AppDialog-BIoXBWLL.js                0.92 kB │ gzip:  0.61 kB
+dist/assets/product-DmNsS4pf.js                  1.20 kB │ gzip:  0.64 kB
+dist/assets/forum-D1FcDVTK.js                    1.22 kB │ gzip:  0.59 kB
+dist/assets/ProductCard-Ds7meJ24.js              1.54 kB │ gzip:  0.83 kB
+dist/assets/Favorites-D5D3OIum.js                1.59 kB │ gzip:  0.93 kB
+dist/assets/ForumPostCard-DPxUT_9i.js            1.61 kB │ gzip:  0.83 kB
+dist/assets/LikeButton-ET7kDmxV.js               1.68 kB │ gzip:  1.01 kB
+dist/assets/AccountSettings-DAViaagL.js          2.21 kB │ gzip:  1.15 kB
+dist/assets/MyProducts-Dh3qON0q.js               2.80 kB │ gzip:  1.42 kB
+dist/assets/Transactions-B5RR_BX_.js             3.61 kB │ gzip:  1.80 kB
+dist/assets/ForumList-DXim6Sh-.js                3.81 kB │ gzip:  1.95 kB
+dist/assets/Notifications-o49ppbkH.js            3.90 kB │ gzip:  1.90 kB
+dist/assets/IdleMarket-BCiAqpG6.js               3.93 kB │ gzip:  2.07 kB
+dist/assets/PostEditor-O-M6QWd9.js               5.44 kB │ gzip:  2.63 kB
+dist/assets/Profile-BmjVMooI.js                  7.33 kB │ gzip:  2.37 kB
+dist/assets/Login-DMjiRYHI.js                    7.45 kB │ gzip:  3.22 kB
+dist/assets/PostDetail-IKWTZm6-.js               7.55 kB │ gzip:  3.14 kB
+dist/assets/Register-DmsrcjQr.js                 9.27 kB │ gzip:  3.36 kB
+dist/assets/ProductDetail-BwZ81-Cn.js            9.43 kB │ gzip:  3.98 kB
+dist/assets/Home-63som_Xc.js                    13.82 kB │ gzip:  4.84 kB
+dist/assets/Publish-CFr9b0Ah.js                 14.66 kB │ gzip:  5.98 kB
+dist/assets/index-B7fXcbtH.js                  127.34 kB │ gzip: 49.49 kB
+✓ built in 1.32s

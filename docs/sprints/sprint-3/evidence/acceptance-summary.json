@@ -1,0 +1,155 @@
+{
+  "recordedAt": "2026-11-23T11:30:18.295479+00:00",
+  "baselineCommit": "38912740e22f20d3b4e718bff6ef814c08050da2",
+  "sourceState": "Sprint 3 local snapshot",
+  "sourceFiles": {
+    "src/views/Publish.vue": "9df03a1658cfe6943f9bf068b080fb5ac4a9360e9e420b883870e48e90b04a87",
+    "src/composables/useProductCover.ts": "b5ac2aea9865ff7301a7a656865435d94f72ec1ddf4324fad8eaf93953f33c2b"
+  },
+  "results": {
+    "coverBrowserChecks": 14,
+    "isolatedModuleChecks": 10,
+    "titleChecks": 15,
+    "existingBrowserScenarioGroups": 16,
+    "backend": {
+      "tests": 161,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 3,
+      "passed": 158
+    },
+    "typecheck": "PASS",
+    "build": "PASS"
+  },
+  "acceptanceMatrix": [
+    {
+      "id": "S3-C01",
+      "status": "PASS",
+      "description": "JPEG, PNG and WebP each upload once and display the server-returned cover",
+      "evidence": [
+        "evidence/cover-browser-results.json#S3-C01"
+      ]
+    },
+    {
+      "id": "S3-C02",
+      "status": "PASS",
+      "description": "Unsupported MIME is blocked before upload and preserves the existing cover",
+      "evidence": [
+        "evidence/cover-browser-results.json#S3-C02"
+      ]
+    },
+    {
+      "id": "S3-C03",
+      "status": "PASS",
+      "description": "5 MiB plus one byte is rejected by the browser before a request",
+      "evidence": [
+        "evidence/cover-browser-results.json#S3-C03-browser",
+        "evidence/cover-module-results.json#M05"
+      ]
+    },
+    {
+      "id": "S3-C04",
+      "status": "PASS",
+      "description": "Corrupt and empty accepted-MIME files receive real API rejection, keep the cover and leave upload idle",
+      "evidence": [
+        "evidence/cover-browser-results.json#S3-C04"
+      ]
+    },
+    {
+      "id": "S3-C05",
+      "status": "PASS",
+      "description": "Empty selection leaves state intact; selecting the same rejected file sends a fresh request",
+      "evidence": [
+        "evidence/cover-browser-results.json#S3-C05"
+      ]
+    },
+    {
+      "id": "S3-C06",
+      "status": "PASS",
+      "description": "In-flight upload blocks a second upload, removal, draft save and product submission",
+      "evidence": [
+        "evidence/cover-browser-results.json#S3-C06"
+      ]
+    },
+    {
+      "id": "S3-C07",
+      "status": "PASS",
+      "description": "Failed upload retains the old cover and allows the same file to succeed on retry",
+      "evidence": [
+        "evidence/cover-browser-results.json#S3-C07"
+      ]
+    },
+    {
+      "id": "S3-C08",
+      "status": "PASS",
+      "description": "Removing the cover blocks product submission with the missing-cover message",
+      "evidence": [
+        "evidence/cover-browser-results.json#S3-C08"
+      ]
+    },
+    {
+      "id": "S3-C09",
+      "status": "PASS",
+      "description": "Removed/reselected replacement is published and its cover persists after refresh",
+      "evidence": [
+        "evidence/cover-browser-results.json#S3-C09"
+      ]
+    },
+    {
+      "id": "S3-C10",
+      "status": "PASS",
+      "description": "Draft restores title, price and uploaded cover; successful publication clears it",
+      "evidence": [
+        "evidence/cover-browser-results.json#S3-C10"
+      ]
+    },
+    {
+      "id": "S3-C11",
+      "status": "PASS",
+      "description": "Non-upload draft image is ignored while other draft fields restore",
+      "evidence": [
+        "evidence/cover-browser-results.json#S3-C11"
+      ]
+    },
+    {
+      "id": "S3-C12",
+      "status": "PASS",
+      "description": "Existing asset cover loads without upload and remains intact after an owner edit",
+      "evidence": [
+        "evidence/cover-browser-results.json#S3-C12"
+      ]
+    },
+    {
+      "id": "S3-C13",
+      "status": "PASS",
+      "description": "Owner cover replacement persists; another user cannot overwrite it",
+      "evidence": [
+        "evidence/cover-browser-results.json#S3-C13"
+      ]
+    },
+    {
+      "id": "S3-C14",
+      "status": "PASS",
+      "description": "Sprint 2 title regression suite",
+      "evidence": [
+        "evidence/title-browser-results.json"
+      ]
+    },
+    {
+      "id": "S3-C15",
+      "status": "PASS",
+      "description": "Frontend checks, existing browser suite and backend suite; PostgreSQL-specific checks skipped",
+      "evidence": [
+        "evidence/frontend-typecheck.txt",
+        "evidence/frontend-build.txt",
+        "evidence/existing-e2e.txt",
+        "evidence/backend-tests.xml"
+      ]
+    }
+  ],
+  "originalRegressionStartedAt": "2026-11-23T11:20:36.207Z",
+  "captureStartedAt": "2026-11-23T11:27:48.966Z",
+  "captureFinishedAt": "2026-11-23T11:28:06.116Z",
+  "screenshots": 7,
+  "status": "PASS"
+}

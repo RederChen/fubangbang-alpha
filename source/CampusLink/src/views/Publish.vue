@@ -79,7 +79,7 @@
             </button>
           </div>
 
-          <!-- 未填槽位（未达到 8 张时显示） -->
+          <!-- 尚未选择封面时显示 -->
           <div
             v-if="photoList.length < 1"
             class="photo-slot empty"
@@ -94,7 +94,7 @@
             </div>
           </div>
 
-          <!-- 多选快速上传快捷卡片 -->
+          <!-- 单张封面选择快捷卡片 -->
           <button
             type="button"
             class="multi-add-btn"
@@ -297,12 +297,13 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive, computed, onMounted, onUnmounted } from 'vue';
+import { ref, reactive, toRef, computed, onMounted, onUnmounted } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
-import { createProduct, updateProduct, getProductDetail, uploadImage, productCategories } from '../api/product';
+import { createProduct, updateProduct, getProductDetail, productCategories } from '../api/product';
 import { errorMessage } from '../api/request';
 import { useUserStore } from '../stores/user';
 import RequestState from '../components/common/RequestState.vue';
+import { useProductCover } from '../composables/useProductCover';
 const router = useRouter();
 const route = useRoute();
 const session = useUserStore();
@@ -319,12 +320,12 @@ const selectedCampus = ref('旗山校区');
 const locationDetail = ref('');
 const acceptBargain = ref(true);
 const focusedField = ref('');
-const photoList = ref<{ url: string }[]>([]);
 const categories = productCategories;
 const campusList = ['旗山校区', '铜盘校区', '怡山校区'];
 const errors = reactive({ photos: '', title: '', price: '', category: '' });
 const isSubmitting = ref(false);
-const uploading = ref(false);
+const { photoList, uploading, triggerFileInput, onFilesSelected, removePhoto, setCover }
+  = useProductCover({ fileInputRef, isSubmitting, error: toRef(errors, 'photos') });
 const initialLoading = ref(false);
 const loadError = ref('');
 const submitError = ref('');
@@ -332,22 +333,6 @@ const publishedSuccess = ref(false);
 const toastMessage = ref('');
 let timer: ReturnType<typeof setTimeout>;
 function showToastMsg(message: string) { toastMessage.value = message; clearTimeout(timer); timer = setTimeout(() => toastMessage.value = '', 2400); }
-function triggerFileInput() { if (!uploading.value && !isSubmitting.value) fileInputRef.value?.click(); }
-async function onFilesSelected(event: Event) {
-  const input = event.target as HTMLInputElement;
-  const file = input.files?.[0];
-  if (!file) return;
-  input.value = '';
-  if (!['image/jpeg', 'image/png', 'image/webp'].includes(file.type) || file.size > 5 * 1024 * 1024) {
-    errors.photos = '请选择 5 MB 以内的 JPEG、PNG 或 WebP 图片'; return;
-  }
-  uploading.value = true;
-  errors.photos = '';
-  try { photoList.value = [{ url: await uploadImage(file) }]; }
-  catch (error) { errors.photos = errorMessage(error); }
-  finally { uploading.value = false; }
-}
-function removePhoto(index: number) { if (!isSubmitting.value && !uploading.value) photoList.value.splice(index, 1); }
 function onPriceInput() { errors.price = ''; }
 function selectCategory(category: string) { selectedCategory.value = category; errors.category = ''; }
 function handleBack() { void router.push('/idle'); }
@@ -373,7 +358,7 @@ async function loadExisting() {
     description.value = item.description || '';
     price.value = String(item.price);
     selectedCategory.value = item.category;
-    photoList.value = [{ url: item.image_url }];
+    setCover(item.image_url);
     selectedCampus.value = campusList.find(campus => item.location?.includes(campus)) || '旗山校区';
     locationDetail.value = (item.location || '').replace(`福州大学${selectedCampus.value}`, '').trim();
     acceptBargain.value = !description.value.includes('不接受议价');
@@ -415,7 +400,7 @@ onMounted(async () => {
     selectedCampus.value = campusList.includes(data.campus) ? data.campus : '旗山校区';
     locationDetail.value = typeof data.location === 'string' ? data.location : '';
     acceptBargain.value = data.acceptBargain !== false;
-    photoList.value = typeof data.image === 'string' && data.image.startsWith('/api/uploads/') ? [{ url: data.image }] : [];
+    setCover(typeof data.image === 'string' && data.image.startsWith('/api/uploads/') ? data.image : null);
     showToastMsg('已恢复本机草稿');
   } catch { showToastMsg('本机草稿无法读取，请重新填写'); }
 });

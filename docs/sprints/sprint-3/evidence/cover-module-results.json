@@ -1,0 +1,57 @@
+{
+  "method": "Direct composable checks using real Vue refs, isolated/stubbed upload responses and metadata fixtures",
+  "boundary": "Local implementation checks; not full browser or live-backend acceptance",
+  "status": "PASS",
+  "checks": [
+    {
+      "id": "M01",
+      "description": "Initialization preserves product URLs/legacy empty strings and explicitly clears with null",
+      "status": "PASS"
+    },
+    {
+      "id": "M02",
+      "description": "Cancelled selection leaves cover, error and idle state unchanged",
+      "status": "PASS"
+    },
+    {
+      "id": "M03",
+      "description": "Unsupported MIME is rejected without upload or replacement and input is reset",
+      "status": "PASS"
+    },
+    {
+      "id": "M04",
+      "description": "One byte above the 5 MiB boundary is rejected before calling upload",
+      "status": "PASS"
+    },
+    {
+      "id": "M05",
+      "description": "Exactly 5 MiB passes client screening (upload response stubbed, not backend image acceptance)",
+      "status": "PASS"
+    },
+    {
+      "id": "M06",
+      "description": "JPEG, PNG and WebP replace a single cover and share only the photo-error field",
+      "status": "PASS"
+    },
+    {
+      "id": "M07",
+      "description": "Upload failure retains old cover and allows successful retry of the same file",
+      "status": "PASS"
+    },
+    {
+      "id": "M08",
+      "description": "In-flight upload blocks picker, removal and a second file-change request",
+      "status": "PASS"
+    },
+    {
+      "id": "M09",
+      "description": "Submitting state blocks cover upload, picker and removal",
+      "status": "PASS"
+    },
+    {
+      "id": "M10",
+      "description": "Idle picker/removal work and a missing DOM input is handled safely",
+      "status": "PASS"
+    }
+  ]
+}

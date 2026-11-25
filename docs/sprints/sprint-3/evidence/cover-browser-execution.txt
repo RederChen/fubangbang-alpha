@@ -1,0 +1,18 @@
+VITE v6.4.4  ready in 372 ms
+
+  ➜  Local:   http://127.0.0.1:55389/
+PASS S3-C01: JPEG, PNG and WebP each upload once and display the server-returned cover
+PASS S3-C02: Unsupported MIME is blocked before upload and preserves the existing cover
+PASS S3-C03-browser: 5 MiB plus one byte is rejected by the browser before a request
+PASS S3-C04: Corrupt and empty accepted-MIME files receive real API rejection, keep the cover and leave upload idle
+PASS S3-C05: Empty selection leaves state intact; selecting the same rejected file sends a fresh request
+PASS S3-C06: In-flight upload blocks a second upload, removal, draft save and product submission
+PASS S3-C07: Failed upload retains the old cover and allows the same file to succeed on retry
+PASS S3-C08: Removing the cover blocks product submission with the missing-cover message
+PASS S3-C09: Removed/reselected replacement is published and its cover persists after refresh
+PASS S3-C10: Draft restores title, price and uploaded cover; successful publication clears it
+PASS S3-C11: Non-upload draft image is ignored while other draft fields restore
+PASS S3-C12: Existing asset cover loads without upload and remains intact after an owner edit
+PASS S3-C13: Owner cover replacement persists; another user cannot overwrite it
+PASS BROWSER-ERRORS: No uncaught browser page errors
+COVER ACCEPTANCE PASS: 14 checks

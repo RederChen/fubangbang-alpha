@@ -1,0 +1,145 @@
+{
+  "startedAt": "2026-11-23T11:20:36.207Z",
+  "method": "Real Edge browser with live local API; isolated SQLite database",
+  "sourceState": "Uncommitted Sprint 3 working tree",
+  "sourceFiles": {
+    "src/views/Publish.vue": "9df03a1658cfe6943f9bf068b080fb5ac4a9360e9e420b883870e48e90b04a87",
+    "src/composables/useProductCover.ts": "b5ac2aea9865ff7301a7a656865435d94f72ec1ddf4324fad8eaf93953f33c2b"
+  },
+  "checks": [
+    {
+      "id": "S3-C01",
+      "description": "JPEG, PNG and WebP each upload once and display the server-returned cover",
+      "status": "PASS",
+      "actual": {
+        "formats": 3,
+        "uploads": 3
+      }
+    },
+    {
+      "id": "S3-C02",
+      "description": "Unsupported MIME is blocked before upload and preserves the existing cover",
+      "status": "PASS",
+      "actual": {
+        "uploadRequests": 0
+      }
+    },
+    {
+      "id": "S3-C03-browser",
+      "description": "5 MiB plus one byte is rejected by the browser before a request",
+      "status": "PASS",
+      "actual": {
+        "bytes": 5242881,
+        "uploadRequests": 0,
+        "exactBoundary": "Covered separately by isolated module check M05"
+      }
+    },
+    {
+      "id": "S3-C04",
+      "description": "Corrupt and empty accepted-MIME files receive real API rejection, keep the cover and leave upload idle",
+      "status": "PASS",
+      "actual": {
+        "http": [
+          422,
+          422
+        ]
+      }
+    },
+    {
+      "id": "S3-C05",
+      "description": "Empty selection leaves state intact; selecting the same rejected file sends a fresh request",
+      "status": "PASS",
+      "actual": {
+        "method": "Programmatic empty-file change and real browser file selection",
+        "sameFileRetry": true
+      }
+    },
+    {
+      "id": "S3-C06",
+      "description": "In-flight upload blocks a second upload, removal, draft save and product submission",
+      "status": "PASS",
+      "actual": {
+        "uploadRequests": 1,
+        "productWrites": 0
+      }
+    },
+    {
+      "id": "S3-C07",
+      "description": "Failed upload retains the old cover and allows the same file to succeed on retry",
+      "status": "PASS",
+      "actual": {
+        "attempts": 2
+      }
+    },
+    {
+      "id": "S3-C08",
+      "description": "Removing the cover blocks product submission with the missing-cover message",
+      "status": "PASS",
+      "actual": {
+        "productWrites": 0
+      }
+    },
+    {
+      "id": "S3-C09",
+      "description": "Removed/reselected replacement is published and its cover persists after refresh",
+      "status": "PASS",
+      "actual": {
+        "http": 201,
+        "imagePersisted": true
+      }
+    },
+    {
+      "id": "S3-C10",
+      "description": "Draft restores title, price and uploaded cover; successful publication clears it",
+      "status": "PASS",
+      "actual": {
+        "title": true,
+        "price": true,
+        "image": true,
+        "draftCleared": true
+      }
+    },
+    {
+      "id": "S3-C11",
+      "description": "Non-upload draft image is ignored while other draft fields restore",
+      "status": "PASS",
+      "actual": {
+        "imageIgnored": true,
+        "titlePreserved": true,
+        "pricePreserved": true
+      }
+    },
+    {
+      "id": "S3-C12",
+      "description": "Existing asset cover loads without upload and remains intact after an owner edit",
+      "status": "PASS",
+      "actual": {
+        "extraUploads": 0,
+        "http": 200
+      }
+    },
+    {
+      "id": "S3-C13",
+      "description": "Owner cover replacement persists; another user cannot overwrite it",
+      "status": "PASS",
+      "actual": {
+        "http": [
+          200,
+          403
+        ],
+        "imagePersisted": true
+      }
+    },
+    {
+      "id": "BROWSER-ERRORS",
+      "description": "No uncaught browser page errors",
+      "status": "PASS",
+      "actual": {
+        "count": 0
+      }
+    }
+  ],
+  "pageErrors": [],
+  "status": "PASS",
+  "finishedAt": "2026-11-23T11:20:51.175Z"
+}
